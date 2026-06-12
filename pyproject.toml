@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "agent-trace"
+version = "1.0.0"
+description = "Debug AI agents like Chrome DevTools — step-by-step tracing, cost analysis, and visualization"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Vincent"}]
+keywords = ["ai", "agent", "llm", "tracing", "debugging", "observability"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    "rich>=13.0",
+    "httpx>=0.25.0",
+]
+
+[project.optional-dependencies]
+dashboard = ["fastapi>=0.104.0", "uvicorn>=0.24.0", "jinja2>=3.1.0"]
+openai = ["openai>=1.0.0"]
+
+[project.scripts]
+agent-trace = "agent_trace.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Vincent-crypto-coder/agent-trace"
+Repository = "https://github.com/Vincent-crypto-coder/agent-trace"
